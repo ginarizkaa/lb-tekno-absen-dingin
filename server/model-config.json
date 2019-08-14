@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "DataUser":{
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "DataAbsensi":{
+    "dataSource": "mongodb",
+    "public": true
   }
 }

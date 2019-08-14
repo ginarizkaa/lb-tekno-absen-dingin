@@ -1,0 +1,40 @@
+{
+    "name": "DataAbsensi",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+
+    "properties": {
+      "idUser": {
+        "type": "string" 
+      },
+      "date": {
+        "type": "date",
+        "defaultFn": "now"
+      },
+      "keterangan": {
+        "type": "string" 
+      },
+      "status": {
+        "type": "string" 
+      },
+      "idAsesor": {
+        "type": "string" 
+      }   
+    },
+
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -140.87,
+          62.41
+        ]
+    },
+
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+  }
