@@ -1,5 +1,5 @@
 {
-    "name": "DataAbsensi",
+    "name": "DataCuti",
     "base": "PersistedModel",
     "idInjection": true,
     "options": {
@@ -10,22 +10,24 @@
       "idEmployee": {
         "type": "string" 
       },
-      "date": {
-        "type": "date",
-        "defaultFn": "now"
-      },
-      "keterangan": {
+      "idCuti": {
         "type": "string" 
       },
-      "status": {
+      "dateAwal": {
+        "type": "date" 
+      },
+      "dateAkhir": {
+        "type": "date" 
+      },
+      "keterangan":{
         "type": "string" 
       },
-      "idAsesor": {
+      "status":{
         "type": "string" 
       },
-      "location": {
-        "type": "object" 
-      }   
+      "idAsesor":{
+        "type": "string" 
+      }
     },
 
     "validations": [],

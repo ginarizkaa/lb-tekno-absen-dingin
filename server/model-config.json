@@ -42,5 +42,13 @@
   "DataAbsensi":{
     "dataSource": "mongodb",
     "public": true
+  },
+  "DataCuti":{
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "TabelCuti":{
+    "dataSource": "mongodb",
+    "public": true
   }
 }
