@@ -7,12 +7,6 @@
     },
 
     "properties": {
-      "idEmployee": {
-        "type": "string" 
-      },
-      "idCuti": {
-        "type": "string" 
-      },
       "dateAwal": {
         "type": "date" 
       },
@@ -24,14 +18,27 @@
       },
       "status":{
         "type": "string" 
-      },
-      "idAsesor":{
-        "type": "string" 
       }
     },
 
     "validations": [],
-    "relations": {},
+    "relations": {
+      "DataEmployee": {
+        "type": "belongsTo",
+        "model": "DataUser",
+        "foreignKey": "idEmployee" 
+      },
+      "DataAsesor": {
+        "type": "belongsTo",
+        "model": "DataUser",
+        "foreignKey": "idAsesor" 
+      },
+      "DataJenisCuti":{
+        "type": "belongsTo",
+        "model": "TabelCuti",
+        "foreignKey": "idJenisCuti"
+      }
+    },
     "acls": [],
     "methods": {}
   }

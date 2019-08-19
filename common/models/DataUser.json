@@ -35,6 +35,16 @@
         "type": "hasMany",
         "model": "DataAbsensi",
         "foreignKey": "idAsesor" 
+      },
+      "DataCuti": {
+        "type": "hasMany",
+        "model": "DataCuti",
+        "foreignKey": "idEmployee" 
+      },
+      "DataCuti2": {
+        "type": "hasMany",
+        "model": "DataCuti",
+        "foreignKey": "idAsesor" 
       }
     },
     "acls": [],

@@ -24,7 +24,7 @@
 
     "validations": [],
     "relations": {
-      "DataUser": {
+      "DataEmployee": {
         "type": "belongsTo",
         "model": "DataUser",
         "foreignKey": "idEmployee" 
