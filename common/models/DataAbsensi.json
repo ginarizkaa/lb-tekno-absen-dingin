@@ -7,9 +7,6 @@
     },
 
     "properties": {
-      "idEmployee": {
-        "type": "string" 
-      },
       "date": {
         "type": "date",
         "defaultFn": "now"
@@ -29,7 +26,13 @@
     },
 
     "validations": [],
-    "relations": {},
+    "relations": {
+      "DataUser": {
+        "type": "belongsTo",
+        "model": "DataUser",
+        "foreignKey": "idEmployee" 
+      }
+    },
     "acls": [],
     "methods": {}
   }

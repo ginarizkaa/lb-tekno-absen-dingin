@@ -25,7 +25,13 @@
     },
 
     "validations": [],
-    "relations": {},
+    "relations": {
+      "DataAbsen": {
+        "type": "hasMany",
+        "model": "DataAbsensi",
+        "foreignKey": "idEmployee" 
+      }
+    },
     "acls": [],
     "methods": {}
   }
