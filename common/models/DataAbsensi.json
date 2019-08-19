@@ -17,9 +17,6 @@
       "status": {
         "type": "string" 
       },
-      "idAsesor": {
-        "type": "string" 
-      },
       "location": {
         "type": "object" 
       }   
@@ -31,6 +28,11 @@
         "type": "belongsTo",
         "model": "DataUser",
         "foreignKey": "idEmployee" 
+      },
+      "DataAsesor": {
+        "type": "belongsTo",
+        "model": "DataUser",
+        "foreignKey": "idAsesor" 
       }
     },
     "acls": [],

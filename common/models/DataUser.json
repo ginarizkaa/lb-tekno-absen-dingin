@@ -30,6 +30,11 @@
         "type": "hasMany",
         "model": "DataAbsensi",
         "foreignKey": "idEmployee" 
+      },
+      "DataAbsen2": {
+        "type": "hasMany",
+        "model": "DataAbsensi",
+        "foreignKey": "idAsesor" 
       }
     },
     "acls": [],
