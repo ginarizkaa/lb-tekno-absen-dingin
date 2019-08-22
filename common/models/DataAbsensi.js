@@ -19,6 +19,10 @@ module.exports = function(DataAbsensi) {
         new Promise(function(resolve, reject){ //fungsi promise untuk menjalankan code sesuai dengan urutannya
             //let date1 = moment(Date.now())
             var filter = {
+                include: [
+                    "DataEmployee", 
+                    "DataAsesor"
+                ],
                 where: {
                     date: {gt: start, lt: end}
                 }
