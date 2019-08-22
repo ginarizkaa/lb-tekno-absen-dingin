@@ -62,6 +62,10 @@ module.exports = function(DataAbsensi) {
         
         new Promise(function(resolve, reject){ //fungsi promise untuk menjalankan code sesuai dengan urutannya
             var filter = {
+                include: [
+                    "DataEmployee", 
+                    "DataAsesor"
+                ],
                 where: {
                     and:[
                         {date: {gt: start, lt: end}},
