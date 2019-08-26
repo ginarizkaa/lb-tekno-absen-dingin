@@ -15,12 +15,6 @@
       },
       "password": {
         "type": "string" 
-      },
-      "roles": {
-        "type": "string" 
-      },
-      "departemen": {
-        "type": "string" 
       }
     },
 
@@ -45,6 +39,16 @@
         "type": "hasMany",
         "model": "DataCuti",
         "foreignKey": "idAsesor" 
+      },
+      "DataSpvMaster": {
+        "type": "hasMany",
+        "model": "DataUser",
+        "foreignKey": "idSpv" 
+      },
+      "DataSpv": {
+        "type": "belongsTo",
+        "model": "DataUser",
+        "foreignKey": "idSpv" 
       }
     },
     "acls": [],

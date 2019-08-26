@@ -90,4 +90,51 @@ module.exports = function(DataAbsensi) {
             callback(err);
         });
     }
+
+    DataAbsensi.remoteMethod(
+        'getTodayBySpv', 
+        {
+            description: 'get data today based on Supervisor',
+            accepts:[
+                {arg: 'idSpv', type: 'string'}
+            ],
+            returns: {
+                arg: 'res', type: 'object', root: true
+            },
+            http: { path: '/getTodayBySpv', verb: 'get'}
+        }
+    );
+    DataAbsensi.getTodayBySpv = function(idSpv, callback){
+        
+        new Promise(function(resolve, reject){ //fungsi promise untuk menjalankan code sesuai dengan urutannya
+            //let date1 = moment(Date.now())
+            var filter = {
+                include:[
+                    "DataEmployee",
+                    "DataAsesor"
+                ],
+                where: {
+                    date: {gt: start, lt: end},
+                    idAsesor: idSpv
+                }
+            }
+            DataAbsensi.find(filter, function(err, result){
+                if(err) reject (err)
+                if (result === null){
+                    err = new Error('Cannot find that name')
+                    err.statusCode = 404
+                    reject (err)
+                }
+
+                resolve (result)
+            })
+        }).then(function(res){
+            if (!res) callback (err)
+            return callback (null, res)
+        }).catch(function(err){
+            callback(err);
+        });
+    };
+
+
 };
