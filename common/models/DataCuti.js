@@ -1,23 +1,28 @@
 module.exports = function(DataCuti) {
     DataCuti.remoteMethod(
-        'getDataCutiEmployee', 
+        'getDataCutiBySpv', 
         {
             description: 'get data by Id',
             accepts:[
-                {arg: 'idEmployee', type: 'string'}
+                {arg: 'idSpv', type: 'string'}
             ],
             returns: {
                 arg: 'res', type: 'object', root: true
             },
-            http: { path: '/getDataCutiEmployee', verb: 'get'}
+            http: { path: '/getDataCutiBySpv', verb: 'get'}
         }
     );
-    DataCuti.getDataCutiEmployee = function(idEmployee, callback){
+    DataCuti.getDataCutiBySpv = function(idSpv, callback){
         new Promise(function(resolve, reject){ //fungsi promise untuk menjalankan code sesuai dengan urutannya
             
             var filter = {
+                include: [
+                    "DataEmployee", 
+                    "DataAsesor",
+                    "DataJenisCuti"
+                ],
                 where: {
-                    idEmployee : idEmployee
+                    idAsesor : idSpv
                 }
             }
             DataCuti.find(filter, function(err, result){
